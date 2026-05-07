@@ -3,14 +3,6 @@ import { createContext, useContext, useState, useCallback, type ReactNode } from
 export const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
 ] as const;
 
 type LangCode = typeof languages[number]['code'];
@@ -142,9 +134,6 @@ const translations: Record<LangCode, Record<string, string>> = {
     'ui.next': 'Next',
     'ui.more_pages': 'More pages',
     'ui.close': 'Close',
-    'ui.sidebar_title': 'Sidebar',
-    'ui.sidebar_desc': 'Displays the mobile sidebar.',
-    'ui.toggle_sidebar': 'Toggle Sidebar',
     'ui.sidebar_title': 'Sidebar',
     'ui.sidebar_desc': 'Displays the mobile sidebar.',
     'ui.toggle_sidebar': 'Toggle Sidebar',
