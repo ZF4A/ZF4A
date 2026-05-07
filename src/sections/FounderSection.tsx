@@ -57,7 +57,7 @@ export default function FounderSection() {
             }}
           />
 
-          <div className="relative p-8 md:p-12 grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative p-8 md:p-12 grid md:grid-cols-2 gap-10 md:gap-12 items-center justify-items-center md:justify-items-stretch">
             {/* Image */}
             <motion.div
               className="relative"
@@ -87,7 +87,7 @@ export default function FounderSection() {
             </motion.div>
 
             {/* Content */}
-            <div>
+            <div className="w-full max-w-xl text-center md:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -102,21 +102,21 @@ export default function FounderSection() {
               </motion.div>
 
               <motion.blockquote
-                className="relative mb-8"
+                className="relative mx-auto mb-8 max-w-xl md:mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                <div className="absolute -left-4 top-0 text-gold text-4xl font-display opacity-30">"</div>
-                <p className="text-white/80 text-lg italic leading-relaxed pl-4">
+                <div className="absolute left-0 top-0 hidden text-gold text-4xl font-display opacity-30 md:block">"</div>
+                <p className="text-white/80 text-lg italic leading-relaxed md:pl-4">
                   {t('founder.statement')}
                 </p>
-                <div className="absolute -right-2 bottom-0 text-gold text-4xl font-display opacity-30">"</div>
+                <div className="absolute bottom-0 right-0 hidden text-gold text-4xl font-display opacity-30 md:block">"</div>
               </motion.blockquote>
 
               {/* Social Links */}
               <motion.div
-                className="socialRow"
+                className="socialRow justify-center md:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.8, duration: 0.8 }}
