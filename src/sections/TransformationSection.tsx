@@ -33,7 +33,7 @@ export default function TransformationSection() {
     <section
       id="transform"
       ref={sectionRef}
-      className="relative w-full min-h-screen py-32 bg-[#0A0A0A]"
+      className="relative w-full min-h-screen py-16 md:py-32 bg-[#0A0A0A]"
     >
       <div className="w-full px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Section Header */}
@@ -44,7 +44,7 @@ export default function TransformationSection() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
-            Transformation
+            {t('transform.badge')}
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-white font-bold mb-4">
             {t('transform.title_prefix')}<span className="text-shimmer">{t('transform.title_highlight')}</span>

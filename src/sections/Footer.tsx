@@ -16,7 +16,7 @@ export default function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer className="relative w-full py-32 bg-[#0A0A0A] border-t border-white/5">
+    <footer className="relative w-full py-16 md:py-32 bg-[#0A0A0A] border-t border-white/5">
       <div className="w-full px-6 lg:px-12 max-w-5xl mx-auto text-center">
         {/* Main CTA */}
         <motion.div

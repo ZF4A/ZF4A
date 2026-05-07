@@ -66,6 +66,32 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Faster tap response on touch devices — removes 300ms delay */
+  button, a, [role="button"], [tabindex] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* iOS momentum scrolling for overflow containers */
+  .overflow-y-auto, .overflow-y-scroll, .max-h-72 {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   /* Subwriting default font: Libre Baskerville
@@ -133,14 +159,21 @@
   
   .animate-float {
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-pulse-gold {
     animation: pulse-gold 2s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-glow-pulse {
     animation: glow-pulse 3s ease-in-out infinite;
+    will-change: box-shadow;
+  }
+
+  .text-shimmer {
+    will-change: background-position;
   }
 }
 

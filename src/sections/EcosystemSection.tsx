@@ -67,7 +67,7 @@ export default function EcosystemSection() {
     <section
       id="ecosystem"
       ref={sectionRef}
-      className="relative w-full min-h-screen py-32 bg-[#0A0A0A]"
+      className="relative w-full min-h-screen py-16 md:py-32 bg-[#0A0A0A]"
     >
       <div className="w-full px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Section Header */}

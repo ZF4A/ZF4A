@@ -92,7 +92,7 @@ export default function ManifestoSection() {
     <section
       id="manifesto"
       ref={sectionRef}
-      className="relative w-full min-h-screen py-32 gradient-radial-dark"
+      className="relative w-full min-h-screen py-16 md:py-32 gradient-radial-dark"
     >
       <div className="w-full px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

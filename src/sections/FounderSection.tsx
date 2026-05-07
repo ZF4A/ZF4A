@@ -23,7 +23,7 @@ export default function FounderSection() {
     <section
       id="founder"
       ref={sectionRef}
-      className="relative w-full min-h-screen py-32 bg-[#0A0A0A]"
+      className="relative w-full min-h-screen py-16 md:py-32 bg-[#0A0A0A]"
     >
       <div className="w-full px-6 lg:px-12 max-w-5xl mx-auto">
         <motion.div
@@ -57,15 +57,17 @@ export default function FounderSection() {
             }}
           />
 
-          <div className="relative p-8 md:p-12 grid md:grid-cols-2 gap-10 md:gap-12 items-center justify-items-center md:justify-items-stretch">
-            {/* Image */}
+          {/* Mobile: flex column centered | Desktop: 2-col grid */}
+          <div className="relative p-6 sm:p-8 md:p-12 flex flex-col items-center gap-8 md:grid md:grid-cols-2 md:items-center md:gap-12">
+
+            {/* ── Photo ── */}
             <motion.div
-              className="relative"
+              className="w-full flex justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="relative rounded-2xl overflow-hidden aspect-square max-w-sm mx-auto">
+              <div className="relative w-64 sm:w-72 md:w-full md:max-w-sm aspect-square rounded-2xl overflow-hidden">
                 <img
                   src="/SAM.jpg"
                   alt="Samuel Wandji"
@@ -74,11 +76,7 @@ export default function FounderSection() {
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
-                {/* Golden frame */}
                 <div className="absolute inset-0 border-2 border-gold/20 rounded-2xl pointer-events-none" />
-                
-                {/* Corner accents */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-gold rounded-tl-lg" />
                 <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-gold rounded-tr-lg" />
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-gold rounded-bl-lg" />
@@ -86,9 +84,11 @@ export default function FounderSection() {
               </div>
             </motion.div>
 
-            {/* Content */}
-            <div className="w-full max-w-xl text-center md:text-left">
+            {/* ── Text content ── */}
+            <div className="w-full flex flex-col items-center text-center md:items-start md:text-left">
+
               <motion.div
+                className="w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -102,21 +102,19 @@ export default function FounderSection() {
               </motion.div>
 
               <motion.blockquote
-                className="relative mx-auto mb-8 max-w-xl md:mx-0"
+                className="w-full mb-8 px-4 md:px-0 border-l-2 border-gold/30 md:border-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                <div className="absolute left-0 top-0 hidden text-gold text-4xl font-display opacity-30 md:block">"</div>
-                <p className="text-white/80 text-lg italic leading-relaxed md:pl-4">
+                <p className="text-white/80 text-base sm:text-lg italic leading-relaxed">
                   {t('founder.statement')}
                 </p>
-                <div className="absolute bottom-0 right-0 hidden text-gold text-4xl font-display opacity-30 md:block">"</div>
               </motion.blockquote>
 
               {/* Social Links */}
               <motion.div
-                className="socialRow justify-center md:justify-start"
+                className="flex flex-wrap gap-3 justify-center md:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.8, duration: 0.8 }}
