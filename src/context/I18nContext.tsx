@@ -1651,7 +1651,11 @@ const translations: Record<LangCode, Dictionary> = Object.fromEntries(
 ) as Record<LangCode, Dictionary>;
 
 // Development audit: warn when specific keys are still identical to English
-if (process.env.NODE_ENV !== 'production') {
+// Avoid referencing Node's `process` directly so builds that type-check for browsers don't fail.
+const _nodeEnv = (typeof globalThis !== 'undefined' && (globalThis as any).process && (globalThis as any).process.env)
+  ? (globalThis as any).process.env.NODE_ENV
+  : undefined;
+if (_nodeEnv !== 'production') {
   const auditKeys: TranslationKey[] = [
     'capability.multi_task',
     'capability.natural_language',
