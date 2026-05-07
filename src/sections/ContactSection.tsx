@@ -16,7 +16,7 @@ export default function ContactSection() {
 
   const send = () => {
     if (!isValid) {
-      setMessage('Please provide your name and a brief purpose (min 6 chars).');
+      setMessage(t('contact.validation_error'));
       setTimeout(() => setMessage(null), 3500);
       return;
     }
@@ -34,7 +34,7 @@ export default function ContactSection() {
         setMessage(t('contact.error'));
       }
     } else {
-      const subject = encodeURIComponent('Contact from website');
+      const subject = encodeURIComponent(t('contact.email_subject'));
       const body = encodeURIComponent(text);
       const mailto = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
       try {
@@ -53,7 +53,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="w-full min-h-screen flex items-center py-16 bg-transparent">
       <div className="max-w-2xl mx-auto px-6 w-full">
-        <div className="bg-gradient-to-br from-white/3 to-white/6 backdrop-blur-md border border-white/6 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-gradient-to-br from-[#0B0B0B]/80 to-[#0B0B0B]/60 backdrop-blur-md border border-white/6 rounded-2xl p-8 shadow-2xl">
           <h3 className="text-3xl font-display text-white font-bold mb-2">{t('contact.heading')}</h3>
           <p className="text-sm text-white/60 mb-6">{t('contact.note')}</p>
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
               <div>
                 <label className="text-sm text-white/80 mb-2 block">{t('contact.name')}</label>
                 <input
-                  aria-label="Name"
+                  aria-label={t('contact.aria_name')}
                   className="w-full p-3 rounded-xl bg-white/5 border border-white/8 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-amber-400"
                   placeholder={t('contact.placeholder.name')}
                   value={name}
@@ -101,7 +101,7 @@ export default function ContactSection() {
             <div className="mt-4">
               <label className="text-sm text-white/80 mb-2 block">{t('contact.purpose')}</label>
               <textarea
-                aria-label="Purpose"
+                aria-label={t('contact.aria_purpose')}
                 className="w-full p-4 rounded-xl bg-white/5 border border-white/8 text-white placeholder-white/50 min-h-[140px] resize-none focus:outline-none focus:ring-2 focus:ring-amber-400"
                 placeholder={t('contact.placeholder.purpose')}
                 value={purpose}
